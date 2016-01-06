@@ -51,3 +51,5 @@ router.get('/signup', function(req, res, next) {
 router.post('/signup', function(req, res, next) {
   // get body from bodyParser and post to db from knex
 });
+
+module.exports = router;
