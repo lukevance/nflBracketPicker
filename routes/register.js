@@ -35,7 +35,7 @@ function hashPassword (user, callback){
 });
 }
 
-hashPassword(testUser, nextFunction);
+// hashPassword(testUser, nextFunction);
 
 // send user data to datbase
 function registerUser (user) {
@@ -44,7 +44,7 @@ function registerUser (user) {
 
 // nav to signup
 router.get('/signup', function(req, res, next) {
-  // render signup page view
+  res.render('signup', {title: 'NFL Playoff Bracket Picker', message: 'Sign up here for your bracket.'});
 });
 
 // get post from form
