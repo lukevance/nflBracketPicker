@@ -9,7 +9,6 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var register = require('./routes/register');
 var signin = require('./routes/signin');
 var signup = require('./routes/signup');
 
@@ -29,7 +28,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/register', register);
 app.use('/signin', signin);
 app.use('/signup', signup);
 
