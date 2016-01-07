@@ -16,6 +16,36 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res) {
   // save body in user variable
   var newUser = req.body;
+
+  // test newUser data for validation
+  var fail = true;
+  var messageData = {};
+
+  if (!newUser.firstname) {
+    messageData.firstname = 'Enter your first name.';
+  } else if (!newUser.lastname) {
+    messageData.lastname = 'Enter your last name.';
+  } else if (newUser.email.indexOf('@') === -1) {
+    messageData.email = 'Enter a valid email address.';
+  } else if (!newUser.username) {
+    messageData.username = 'Enter a username';
+  } else if (!newUser.password) {
+    messageData.password = "Enter a password.";
+  } else if (newUser.password !== newUser.confPassword) {
+    messageData.password = "Passwords don't match.";
+  } else if (newUser.password.length < 8) {
+    messageData.password = "Password must be at least 8 characters long.";
+  } else {
+    fail = false;
+  }
+
+  // if errors exist rerender else store user
+  if (fail === true) {
+    res.render('signup', {error: messageData, data: newUser});
+  } else {
+    hashPassword(newUser, registerUser);
+  }
+
   // set up functions for encryption
   // hash with bcryp and send to knex
   function hashPassword (user, callback){
@@ -42,9 +72,6 @@ router.post('/', function(req, res) {
       console.log(failure);
     });
   }
-
-  // Write queries to interact with postgres
-  hashPassword(newUser, registerUser);
 
   // NEED TO HAVE VIEW MADE FOR THIS
 }, function(failure) {
