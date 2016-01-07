@@ -1,8 +1,68 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/*
+ *  Flex Layout Specifics
+*/
+main{
+  display:flex;
+  flex-direction:row;
+}
+.round{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  width:200px;
+  list-style:none;
+  padding:0;
+}
+  .round .spacer{ flex-grow:1; }
+  .round .spacer:first-child,
+  .round .spacer:last-child{ flex-grow:.5; }
+
+  .round .game-spacer{
+    flex-grow:1;
+  }
+
+/*
+ *  General Styles
+*/
+body{
+  font-family:sans-serif;
+  font-size:small;
+  padding:10px;
+  line-height:1.4em;
 }
 
-a {
-  color: #00B7FF;
+li.game{
+  padding-left:20px;
 }
+
+  /*li.game.winner{
+    font-weight:bold;
+  }*/
+
+  li.game span{
+    float:right;
+    margin-right:5px;
+  }
+
+  li.game-top{
+    border-bottom:1px solid #aaa;
+  }
+
+  li.game-spacer{
+    border-right:1px solid #aaa;
+    min-height:40px;
+  }
+
+  li.game-spacer-left{
+    border-left:1px solid #aaa;
+    min-height:40px;
+  }
+
+
+  li.game-bottom{
+    border-top:1px solid #aaa;
+  }
+
+  h1 {
+    text-align:center;
+  }
