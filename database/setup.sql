@@ -11,6 +11,5 @@ CREATE TABLE users (
 
 CREATE TABLE week1picks (
     id          SERIAL,
-    cin_pit     VARCHAR,
-    
+    cin_pit     VARCHAR
 );
