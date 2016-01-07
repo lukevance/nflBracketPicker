@@ -1,19 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var bcrypt = require('bcrypt');
-var postgres = require('pg');
-var knex = require('knex');
-
-var knexOptions = {
-  client: 'pg', //tell knex to use postgres driver module pg
-  connection: {
-    host: '127.0.0.1', //connect to local db
-    port: 5432, //on the default postgres port
-    user: 'lukevance', //put your username here
-    debug: false, //when facing issues can be nice to set to true
-    database: 'nfl_picker' //name of database
-  }
-};
+var pg = require('pg');
+var knex = require('knex')({
+  client: 'pg',
+  connection: process.env.DATABASE_URL
+});
 
 // dummy data from user
 var testUser = {
@@ -43,13 +35,33 @@ function registerUser (user) {
 }
 
 // nav to signup
-router.get('/signup', function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.render('signup', {title: 'NFL Playoff Bracket Picker', message: 'Sign up here for your bracket.'});
 });
 
-// get post from form
-router.post('/signup', function(req, res, next) {
-  // get body from bodyParser and post to db from knex
+// Create User /register/signup
+router.post('/', function(req, res) {
+
+  console.log(req.body);
+
+  // Write queries to interact with postgres
+  knex('users').insert( {
+      username:req.body.username,
+      password:req.body.password,
+      email:req.body.email
+    }).then(function(data) {
+
+    res.redirect('/');
+
+    // {title: 'nfl Picker', message: 'welcome' + req.body.username}
+
+  }, function(failure) {
+    console.log(failure);
+  });
+  // NEED TO HAVE VIEW MADE FOR THIS
+}, function(failure) {
+  res.write('this is the new page and you failed');
+  res.end();
 });
 
 module.exports = router;
