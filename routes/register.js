@@ -7,16 +7,6 @@ var knex = require('knex')({
   connection: process.env.DATABASE_URL
 });
 
-// dummy data from user
-var testUser = {
-  username: 'xoEugenexoxo',
-  firstname: 'Logan',
-  lastname: 'King',
-  phone: '1234567890',
-  email: 'number1eugenefanboy@hotmail.com',
-  password: 'notverysecure'
-};
-
 // hash with bcryp and send to knex
 function hashPassword (user, callback){
   bcrypt.genSalt(10, function(err, salt) {
