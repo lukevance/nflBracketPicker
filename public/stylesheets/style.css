@@ -77,3 +77,14 @@ table, td {
 	font-weight: bold;
 	padding: 8px 8px;
 }
+
+/* signin page */
+.signinForm {
+  margin: 0 auto;
+  width:60%;
+}
+
+#signinHeader {
+  margin-top:2em;
+  text-align:center;
+}
