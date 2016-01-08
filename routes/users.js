@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+router.get('/bracket', function(req, res, next){
+  res.render('bracket');
+});
+
 module.exports = router;

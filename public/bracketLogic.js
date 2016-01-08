@@ -42,5 +42,7 @@ var winnersWeekOne = function(conference, x, y){
   return conferenceWinnersWeek1;
 };
 
+
+
 console.log(winnersWeekOne(afc, "Pittsburgh Steelers", "Kansas City Chiefs"));
 console.log(winnersWeekOne(nfc, "Seattle Seahawks", "Green Bay Packers"));
