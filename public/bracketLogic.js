@@ -1,3 +1,56 @@
+$('input').click(function(){
+  var afc = [];
+  var nfc = [];
+  var week1Picks = {};
+
+  var cinButton = $('.cinButton');
+  var pitButton = $('.pitButton');
+  var houButton = $('.houButton');
+  var kanButton = $('.kanButton');
+  var minButton = $('.minButton');
+  var seaButton = $('.seaButton');
+  var wasButton = $('.wasButton');
+  var gbButton = $('.gbButton');
+
+var btnClass = this.getAttribute('class');
+var btnName = this.getAttribute('name');
+
+  if(btnClass === 'cinButton' || btnClass === 'pitButton'){
+    cinButton.prop('disabled', true);
+    pitButton.prop('disabled', true);
+    $('.AFCgame1').hide('slow', function(){
+      console.log(btnName);
+      return btnName;
+    });
+  } else if(btnClass === 'houButton' || btnClass === 'kanButton'){
+    houButton.prop('disabled', true);
+    kanButton.prop('disabled', true);
+    $('.AFCgame2').hide('slow', function(){
+      console.log(btnName);
+      return btnName;
+    });
+  } else if(btnClass === 'minButton' || btnClass === 'seaButton'){
+    minButton.prop('disabled', true);
+    seaButton.prop('disabled', true);
+    $('.NFCgame1').hide('slow', function(){
+      console.log(btnName);
+      return btnName;
+    });
+  } else if(btnClass === 'wasButton' || btnClass === 'gbButton'){
+    wasButton.prop('disabled', true);
+    gbButton.prop('disabled', true);
+    $('.NFCgame2').hide('slow', function(){
+      console.log(btnName);
+      return btnName;
+    });
+  }
+
+});
+
+$('#subWeek1').click(function(){
+
+});
+
 var afc = {
   1: "Denver Broncos",
   2: "New England Patriots",

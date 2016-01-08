@@ -24,7 +24,7 @@ router.post('/', function(req, res, next) {
     if (user) {
       // username/password is correct
       if (bcrypt.compareSync(req.body.password, user.password)) {
-        res.render('/gamepicks');
+        res.render('./users/gamepicks');
         // res.redirect('users/userhome');
       } else {
         // username/password is incorrect

@@ -1,27 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title></title>
 
-    <h1>Select Your Picks...</h1>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/stylesheets/gamepicks.css" charset="utf-8">
+</head>
 
-    <form class="week1" id="AFCw1" action="index.html" method="post">
-      <button type="text" name="button"></button>
+<body>
+
+  <h1>Select Your Picks...</h1>
+
+
+  <section class="weekOne">
+    <form class="week1" id="AFCgame1" action="index.html" method="post">
+
+      <div class="AFCgame1">
+        <input class="cinButton" type="button" name="Cincinnati Bengals" value="Cincinnati Bengals">
+        <h2>Vs.</h2>
+        <input class="pitButton" type="button" name="Pittsburgh Steelers" value="Pittsburgh Steelers">
+      </div>
+
+      <div class="AFCgame2">
+        <input class="houButton" type="button" name="Houston Texans" value="Houston Texans">
+        <h2>Vs.</h2>
+        <input class="kanButton" type="button" name="Kansas City Chiefs" value="Kansas City Chiefs">
+      </div>
+
+      <div class="NFCgame1">
+        <input class="minButton" type="button" name="Minnesota Vikings" value="Minnesota Vikings">
+        <h2>Vs.</h2>
+        <input class="seaButton" type="button" name="Seattle Seahawks" value="Seattle Seahawks">
+      </div>
+
+      <div class="NFCgame2">
+        <input class="wasButton" type="button" name="Washington Redskins" value="Washington Redskins">
+        <h2>Vs.</h2>
+        <input class="gbButton" type="button" name="Green Bay Packers" value="Green Bay Packers">
+      </div>
+
+      <button id="subWeek1" type="submit" name="button">Submit Week 1 Picks</button>
+
     </form>
 
-    <form class="week1" id="NFCw1" action="index.html" method="post">
-
-    </form>
+  </section>
 
 
-    <script src="/bracketLogic.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  </body>
+
+  <script src="/bracketLogic.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+
 </html>

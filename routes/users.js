@@ -10,4 +10,8 @@ router.get('/bracket', function(req, res, next){
   res.render('bracket');
 });
 
+router.get('/gamepicks', function(req, res, next){
+  res.render('gamepicks');
+});
+
 module.exports = router;
