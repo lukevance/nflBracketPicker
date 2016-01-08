@@ -9,7 +9,19 @@ CREATE TABLE users (
     score       INTEGER
 );
 
-CREATE TABLE week1picks (
-    id          SERIAL,
-    cin_pit     VARCHAR
+DROP TABLE picks;
+CREATE TABLE picks (
+    id         SERIAL PRIMARY KEY,
+    user_id    INTEGER,
+    afc_g1     VARCHAR,
+    afc_g2     VARCHAR,
+    afc_g3     VARCHAR,
+    afc_g4     VARCHAR,
+    afc_g5     VARCHAR,
+    nfc_g1     VARCHAR,
+    nfc_g2     VARCHAR,
+    nfc_g3     VARCHAR,
+    nfc_g4     VARCHAR,
+    nfc_g5     VARCHAR,
+    sb_winner  VARCHAR
 );
