@@ -17,6 +17,7 @@ router.get('/', function(req, res, next) {
 
 // post signin info and confirm correct
 router.post('/', function(req, res, next) {
+
   knex('users').where({
     username : req.body.username
     // password: req.body.password
@@ -24,15 +25,21 @@ router.post('/', function(req, res, next) {
     console.log(req.body.password);
     console.log('this is the password from the db: ' + user[0].password);
 
-
     function redirect (destination) {
       res.redirect(destination);
     }
 
     function next (user, status) {
       // console.log(status);
+      console.log(user);
       if (status === true) {
+        //set cookie
+        req.session.user = {
+          username : user.username,
+        };
+        console.log(req.session.user);
         redirect('/');
+
       } else {
         res.send('incorrect username or password');
       }
