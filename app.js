@@ -11,6 +11,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var signin = require('./routes/signin');
 var signup = require('./routes/signup');
+var gamepPicks = require('./routes/gamepicks');
 
 var app = express();
 

@@ -17,14 +17,14 @@ router.get('/', function(req, res, next) {
 
 // post signin info and confirm correct
 router.post('/', function(req, res, next) {
-  knex('nflbracketpicker').select().from('users').where({
+  knex('users').select().where({
     username : req.body.username
     // password: req.body.password
   }).then(function(user) {
     if (user) {
       // username/password is correct
       if (bcrypt.compareSync(req.body.password, user.password)) {
-        res.redirect('/signup');
+        res.render('/gamepicks');
         // res.redirect('users/userhome');
       } else {
         // username/password is incorrect
