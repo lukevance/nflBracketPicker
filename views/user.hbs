@@ -1,0 +1,185 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-center">username{{username}}'s Bracket Entry</h2>
+      <p>
+        <!-- if picks are made, message a, if not message b -->
+        {{message}}
+      </p>
+      <a class="btn center btn-default" href="#" role="button">Make Picks</a>
+    </div>
+  </div>
+  <div class="row buffer">
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-5">
+      <h1>AFC Bracket</h1>
+      <main id="tournament">
+
+        <ul class="round round-1">
+          <li class="spacer">&nbsp;</li>
+          <li class="game game-top winner">{{data.afcw1}}
+            <span></span>
+          </li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom ">{{data.afcw2}}
+            <span></span>
+          </li>
+          <li class="spacer">&nbsp;</li>
+          <li class="spacer">&nbsp;</li>
+          <li class="spacer">&nbsp;</li>
+          <li class="spacer">&nbsp;</li>
+          <li class="spacer">&nbsp;</li>
+          <li class="spacer">&nbsp;</li>
+          <li class="spacer">&nbsp;</li>
+          <li class="spacer">&nbsp;</li>
+          <li class="game game-top ">{{data.afcw3}}
+            <span></span>
+          </li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom winner">{{data.afcw4}}
+            <span></span>
+          </li>
+          <li class="spacer">&nbsp;</li>
+        </ul>
+
+        <ul class="round round-2">
+          <li class="spacer">&nbsp;</li>
+          <li class="game game-top winner">
+            {{data.afc_g1}}
+          </li>
+
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom ">1. Denver
+          </li>
+          <li class="spacer">&nbsp;</li>
+          <li class="spacer">&nbsp;</li>
+          <li class="game game-top winner">2. New England
+          </li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom winner">
+            {{data.afc_g2}}
+          </li>
+          <li class="spacer">&nbsp;</li>
+        </ul>
+
+        <ul class="round round-3">
+          <li class="spacer">&nbsp;</li>
+          <li class="game game-top winner">
+            {{data.afc_g3}}
+          </li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-top winner">
+            {{data.afc_g4}}
+          </li>
+          <li class="spacer">&nbsp;</li>
+        </ul>
+
+        <ul class="round round-4">
+          <li class="spacer">&nbsp;</li>
+          <li class="game game-top winner">
+            {{data.afc_g5}} AFC Champion
+          </li>
+          <li class="spacer">&nbsp;</li>
+        </ul>
+    </div>
+
+    <div class="col-md-2">
+      <main id="tournament">
+
+        <ul class="round round-5">
+          <li class="spacer">&nbsp;</li>
+          <li class="spacer">&nbsp;</li>
+          <li class="spacer">&nbsp;</li>
+          <li class="spacer">&nbsp;</li>
+          <li class="spacer">&nbsp;</li>
+          <li class="spacer">&nbsp;</li>
+          <li class="game game-top winner">
+            <span></span>
+            <h3 class"text-center">Super Bowl XL Champion</h3>
+              {{data.sb_winner}}SB winner
+          </li>
+          <li class="spacer">&nbsp;</li>
+        </ul>
+    </div>
+
+    <div class="col-md-5">
+      <h1>NFC Bracket</h1>
+      <main id="tournament">
+
+        <ul class="round round-4">
+          <li class="spacer">&nbsp;</li>
+          <li class="game game-top winner">
+            {{data.nfc_5}} NFC Champion
+          </li>
+          <li class="spacer">&nbsp;</li>
+        </ul>
+
+        <ul class="round round-3">
+          <li class="spacer">&nbsp;</li>
+          <li class="game game-top winner">
+            {{data.nfc_g4}}G4
+          </li>
+          <li class="game game-spacer-left">&nbsp;</li>
+          <li class="game game-spacer-left">&nbsp;</li>
+          <li class="game game-spacer-left">&nbsp;</li>
+          <li class="game game-top winner">
+            {{data.nfc_g3}}G3
+          </li>
+          <li class="spacer">&nbsp;</li>
+        </ul>
+
+        <ul class="round round-2">
+          <li class="spacer">&nbsp;</li>
+          <li class="game game-top winner">
+            {{data.nfc_g2}}G2
+          </li>
+          <li class="game game-spacer-left">&nbsp;</li>
+          <li class="game game-spacer-left">&nbsp;</li>
+          <li class="game game-bottom ">1. Carolina
+            <span></span>
+          </li>
+          <li class="spacer">&nbsp;</li>
+          <li class="game game-top winner">
+            {{data.nfc_g1}}G1
+          </li>
+          <li class="game game-spacer-left">&nbsp;</li>
+          <li class="game game-spacer-left">&nbsp;</li>
+          <li class="game game-bottom winner">2. Arizona
+            <span></span>
+          </li>
+          <li class="spacer">&nbsp;</li>
+        </ul>
+
+        <ul class="round round-1">
+          <li class="spacer">&nbsp;</li>
+          <li class="game game-top winner">{{data.nfcw1}}
+            <span></span>
+          </li>
+          <li class="game game-spacer-left">&nbsp;</li>
+          <li class="game game-bottom ">{{data.nfcw2}}
+            <span></span>
+          </li>
+          <li class="spacer">&nbsp;</li>
+          <li class="spacer">&nbsp;</li>
+          <li class="spacer">&nbsp;</li>
+          <li class="spacer">&nbsp;</li>
+          <li class="spacer">&nbsp;</li>
+          <li class="spacer">&nbsp;</li>
+          <li class="spacer">&nbsp;</li>
+          <li class="spacer">&nbsp;</li>
+          <li class="game game-top ">{{data.nfcw3}}
+            <span></span>
+          </li>
+          <li class="game game-spacer-left">&nbsp;</li>
+          <li class="game game-bottom winner">{{data.nfcw4}}
+            <span></span>
+          </li>
+          <li class="spacer">&nbsp;</li>
+        </ul>
+
+      </main>
+    </div>
+  </div>

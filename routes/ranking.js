@@ -8,12 +8,12 @@ var knex = require('knex')({
 });
 
 router.get('/', function(req, res, next) {
-  knex('users').select('username', 'score').orderBy('score', 'desc').then(function(userInfo){
-    res.render('ranking', {
-      title: 'Scores',
-      userInfo: userInfo
-     });
-  })
+	  knex('users').select('username', 'score').orderBy('score', 'desc').then(function(userInfo){
+	    res.render('ranking', {
+	      title: 'Scores',
+	      userInfo: userInfo
+	     });
+	  });
 });
 
 module.exports = router;
