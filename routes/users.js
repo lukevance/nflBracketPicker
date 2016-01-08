@@ -11,7 +11,14 @@ router.get('/bracket', function(req, res, next){
 });
 
 router.get('/gamepicks', function(req, res, next){
-  res.render('gamepicks');
+	
+	if(req.session.user) {
+		res.render('gamepicks');
+	} else {
+		res.render("signin", {
+			message: "You must be signed in to access gamepicks"
+		});
+	}
 });
 
 router.get('/signout', function(req, res) {
