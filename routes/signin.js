@@ -17,27 +17,46 @@ router.get('/', function(req, res, next) {
 
 // post signin info and confirm correct
 router.post('/', function(req, res, next) {
-  knex('nflbracketpicker').select().from('users').where({
+  knex('users').select().where({
     username : req.body.username
     // password: req.body.password
   }).then(function(user) {
-    if (user) {
-      // username/password is correct
-      if (bcrypt.compareSync(req.body.password, user.password)) {
-        res.redirect('/signup');
-        // res.redirect('users/userhome');
+    console.log(req.body.password);
+
+    function next (user, status) {
+      console.log(status);
+      if (status === true) {
+        redirect('/index');
       } else {
-        // username/password is incorrect
         res.send('incorrect username or password');
       }
+    }
+
+    if (user) {
+      console.log(user);
+      // username/password is correct
+      comparePassword(req.body.password, user, next);
+
     } else {
       console.log('err');
     }
+
   });
   // .catch(function(err) {
   //   if whole thing doesn't work
   //   console.log(err);
   // });
 });
+
+function comparePassword (password, user, callback) {
+  bcrypt.compare(password, user.password, function(err, res){
+    console.log(err);
+      callback(user, res);
+  });
+}
+
+function redirect (destination) {
+  res.redirect(destination);
+}
 
 module.exports = router;
