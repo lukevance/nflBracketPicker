@@ -14,4 +14,9 @@ router.get('/gamepicks', function(req, res, next){
   res.render('gamepicks');
 });
 
+router.get('/signout', function(req, res) {
+	req.session = null;
+	res.redirect('/');
+});
+
 module.exports = router;

@@ -5,12 +5,15 @@ var dotenv = require('dotenv');
 dotenv.load();
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var cookieSession = require('cookie-session');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var signin = require('./routes/signin');
 var signup = require('./routes/signup');
+var ranking = require('./routes/ranking');
+
 
 
 var app = express();
@@ -25,12 +28,17 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(cookieSession({
+  secret: "goBroncos"
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
 app.use('/signin', signin);
 app.use('/signup', signup);
+app.use('/ranking', ranking);
+
 
 
 // catch 404 and forward to error handler
