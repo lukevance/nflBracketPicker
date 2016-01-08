@@ -1,2 +1,38 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="jumbotron">
+  <div class="container">
+    <h1>FoCo Galvanize NFL Playoff Challenge</h1>
+    <p>
+      Follow your favorite NFL teams as they progress through the playoffs!
+      <br>Sign up and submit your NFL playoff bracket by Saturday 10:00 AM.
+      <br>$10 buy in required to play</p>
+    <p><a class="btn btn-primary btn-lg" id="jumbotronButton" href="#" role="button">Sign Up</a></p>
+  </div>
+</div>
+
+
+<div class='row'>
+  <div class='container'>
+    <div class='col-md-2'></div>
+    <div class='col-md-8'>
+      <div class="panel panel-default">
+        <div class="panel-heading">Current Rankings</div>
+        <table class="table" id="rankingTable">
+          <tr id="trHead">
+            <td>Player</td>
+            <td>Score</td>
+          </tr>
+
+          {{#each userInfo}}
+            <tr>
+              <td>{{this.username}}
+              </td>
+              <td>{{this.score}}
+              </td>
+            </tr>
+          {{/each}}
+        </table>
+      </div>
+    </div>
+    <div class='col-md-2'></div>
+  </div>
+</div>
