@@ -90,3 +90,14 @@ table, td {
 .buffer {
   min-height: 4em;
 }
+
+/* signin page */
+.signinForm {
+  margin: 0 auto;
+  width:60%;
+}
+
+#signinHeader {
+  margin-top:2em;
+  text-align:center;
+}
