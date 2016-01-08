@@ -17,25 +17,31 @@ router.get('/', function(req, res, next) {
 
 // post signin info and confirm correct
 router.post('/', function(req, res, next) {
-  knex('users').select().where({
+  knex('users').where({
     username : req.body.username
     // password: req.body.password
   }).then(function(user) {
     console.log(req.body.password);
+    console.log('this is the password from the db: ' + user[0].password);
+
+
+    function redirect (destination) {
+      res.redirect(destination);
+    }
 
     function next (user, status) {
-      console.log(status);
+      // console.log(status);
       if (status === true) {
-        redirect('/index');
+        redirect('/');
       } else {
         res.send('incorrect username or password');
       }
     }
 
-    if (user) {
-      console.log(user);
+    if (user[0]) {
+      // console.log(user);
       // username/password is correct
-      comparePassword(req.body.password, user, next);
+      comparePassword(req.body.password, user[0], next);
 
     } else {
       console.log('err');
@@ -50,13 +56,10 @@ router.post('/', function(req, res, next) {
 
 function comparePassword (password, user, callback) {
   bcrypt.compare(password, user.password, function(err, res){
-    console.log(err);
+    // console.log(err);
       callback(user, res);
   });
 }
 
-function redirect (destination) {
-  res.redirect(destination);
-}
 
 module.exports = router;
