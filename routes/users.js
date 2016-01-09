@@ -33,26 +33,26 @@ router.get('/signout', function(req, res) {
 router.post('/gamepicks', function(req, res) {
   var userSubmission = req.body;
   res.send('this worked');
-  // knex('picks').insert({
-  //   id: id
-  //   username: username
-  //   afc_g1: userSubmission.
-  //   afc_g2: userSubmission.
-  //   afc_g3: userSubmission.
-  //   afc_g4: userSubmission.
-  //   afc_g5: userSubmission.
-  //   nfc_g1: userSubmission.
-  //   nfc_g2: userSubmission.
-  //   nfc_g3: userSubmission.
-  //   nfc_g4: userSubmission.
-  //   nfc_g5: userSubmission.
-  //   sb: userSubmission.
-  // }).then(function(data) {
-  //   res.redirect('/user');
-  //   res.end();
-  // }, function(failure) {
-  //   console.log(failure);
-  // });
+  knex('picks').insert({
+    id: id,
+    user_id: req.session.user.id,
+    afc_g1: userSubmission.afc_g1,
+    afc_g2: userSubmission.afc_g2,
+    afc_g3: userSubmission.afc_g3,
+    afc_g4: userSubmission.afc_g4,
+    afc_g5: userSubmission.afc_g5,
+    nfc_g1: userSubmission.nfc_g1,
+    nfc_g2: userSubmission.nfc_g2,
+    nfc_g3: userSubmission.nfc_g3,
+    nfc_g4: userSubmission.nfc_g4,
+    nfc_g5: userSubmission.nfc_g5,
+    sb_winner: userSubmission.sb
+  }).then(function(data) {
+    res.redirect('/user');
+    res.end();
+  }, function(failure) {
+    console.log(failure);
+  });
 });
 
 /* GET users listing. */

@@ -115,7 +115,7 @@ var pushToObject = function(winnerArray){
 
     // console.log(winnersWeekOne(nfc, nfc1, nfc2));
     // console.log(winnersWeekOne(afc, afc1, afc2));
-
+    $()
   }
   console.log(winnersWeekOne(afc, afc1, afc2));
   console.log(winnersWeekOne(nfc, nfc1, nfc2));
