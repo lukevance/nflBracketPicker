@@ -115,11 +115,17 @@ var pushToObject = function(winnerArray){
 
     // console.log(winnersWeekOne(nfc, nfc1, nfc2));
     // console.log(winnersWeekOne(afc, afc1, afc2));
-    $()
   }
   console.log(winnersWeekOne(afc, afc1, afc2));
   console.log(winnersWeekOne(nfc, nfc1, nfc2));
+    $('#afc_g1').val(winnerPicks.afc_g1);
+    $('#afc_g2').val(winnerPicks.afc_g2);
+    $('#nfc_g1').val(winnerPicks.nfc_g1);
+    $('#nfc_g2').val(winnerPicks.nfc_g2);
+
 };
+
+
 
 $('#subWeek1').click(function(){
 
