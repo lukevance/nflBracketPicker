@@ -20,27 +20,23 @@ router.post('/', function(req, res, next) {
 
   knex('users').where({
     username: req.body.username
-      // password: req.body.password
   }).then(function(user) {
-    console.log(req.body.password);
-    console.log('this is the password from the db: ' + user[0].password);
-
     function redirect(destination) {
       res.redirect(destination);
     }
 
     function next(user, status) {
       // console.log(status);
-      console.log(user);
+      // console.log(user);
       if (status === true) {
         //set cookie
-        console.log(user.id);
+        // console.log(user.id);
         req.session.user = {
           username: user.username,
           id: user.id
         };
-        console.log(req.session.user);
-        res.redirect('/');
+        // console.log(req.session.user);
+        res.redirect('/users/' +req.session.user.id);
 
       } else {
         res.render('signin', {
