@@ -11,7 +11,6 @@ CREATE TABLE users (
 
 DROP TABLE picks;
 CREATE TABLE picks (
-    id         SERIAL PRIMARY KEY,
     user_id    INTEGER,
     afc_g1     VARCHAR,
     afc_g2     VARCHAR,
@@ -25,3 +24,4 @@ CREATE TABLE picks (
     nfc_g5     VARCHAR,
     sb_winner  VARCHAR
 );
+ 

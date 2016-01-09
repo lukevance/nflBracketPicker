@@ -32,9 +32,8 @@ router.get('/signout', function(req, res) {
 
 router.post('/gamepicks', function(req, res) {
   var userSubmission = req.body;
-  res.send('this worked');
+  console.log(req.session.user.id);
   knex('picks').insert({
-    id: id,
     user_id: req.session.user.id,
     afc_g1: userSubmission.afc_g1,
     afc_g2: userSubmission.afc_g2,
@@ -48,8 +47,7 @@ router.post('/gamepicks', function(req, res) {
     nfc_g5: userSubmission.nfc_g5,
     sb_winner: userSubmission.sb
   }).then(function(data) {
-    res.redirect('/user');
-    res.end();
+    res.redirect('/users/'+ req.session.user.id);
   }, function(failure) {
     console.log(failure);
   });
