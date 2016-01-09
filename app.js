@@ -56,8 +56,8 @@ if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
-      message: "NFL Bracket Error: This page does not exist",
-      error: {}
+      message: "NFL Challenge Error: This page does not exist",
+      error: err
     });
   });
 }

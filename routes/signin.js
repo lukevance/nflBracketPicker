@@ -34,8 +34,10 @@ router.post('/', function(req, res, next) {
       console.log(user);
       if (status === true) {
         //set cookie
+        console.log(user.id);
         req.session.user = {
           username: user.username,
+          id: user.id
         };
         console.log(req.session.user);
         res.redirect('/');
